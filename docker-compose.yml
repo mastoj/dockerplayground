@@ -1,0 +1,14 @@
+esnode1:
+    build: ./eventstore
+esnode2:
+    build: ./eventstore
+esnode3:
+    build: ./eventstore
+nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    links:
+      - esnode1
+      - esnode2
+      - esnode3
